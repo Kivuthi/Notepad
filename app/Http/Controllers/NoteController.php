@@ -11,7 +11,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes::latest()->get()->each();
+        return view("note.index");
     }
 
     /**
@@ -19,7 +20,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view("note.create");
     }
 
     /**
@@ -27,7 +28,16 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "title"=> "required",
+            "subtitle"=> "nullable",
+            "message"=> "required",
+            "priority"=> "required"
+            ]);
+
+            notes::create($validated);
+
+            return redirect("notes.index")->with("success","Notes saved successfully");
     }
 
     /**
