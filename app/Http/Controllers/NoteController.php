@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Note;
 
 class NoteController extends Controller
 {
@@ -11,8 +12,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes::latest()->get()->each();
-        return view("note.index");
+        $notes = Note::latest()->get();
+        return view("note.index", compact("notes"));
     }
 
     /**
@@ -35,9 +36,10 @@ class NoteController extends Controller
             "priority"=> "required"
             ]);
 
-            notes::create($validated);
+        Note::create($validated);
 
-            return redirect("notes.index")->with("success","Notes saved successfully");
+        return redirect()->route("notes.index")->with("success", "Note saved successfully");
+
     }
 
     /**

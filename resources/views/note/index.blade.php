@@ -23,18 +23,18 @@
 
         @forelse($notes as $note)
             <h1 class="text-lg font-semibold">{{ $note->title }}</h1>
-                <p class="text-sm opacity-90">{{ $post->subtitle }}</p>
+                <p class="text-sm opacity-90">{{ $note->subtitle }}</p>
             </header>
             <div class="px-4 py-4 text-slate-700 flex-1">
                 <p class="mb-2">{{ $note->message }}</p>
-                <p class="mb-0 text-sm text-slate-500">Last updated: {{  $post->created_at->diffForHumans() }}</p>
+                <p class="mb-0 text-sm text-slate-500">Last updated: {{  $note->created_at->diffForHumans() }}</p>
             </div>
             <div class="px-4 py-3 bg-slate-50 flex items-center justify-between">
                 <div class="flex gap-2">
                 <a href="#" class="inline-flex items-center gap-1 bg-sky-600 hover:bg-sky-700 text-white px-3 py-1.5 rounded-md text-sm">Edit</a>
                 <a href="#" class="inline-flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-md text-sm">Delete</a>
                 </div>
-                <span class="text-xs text-slate-500">Priority: <span class="font-semibold text-sky-600">High</span></span>
+                <span class="text-xs text-slate-500">Priority: <span class="font-semibold text-sky-600">{{ $note->priority}}</span></span>
             </div>
     </article>
         @empty
