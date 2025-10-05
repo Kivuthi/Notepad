@@ -31,15 +31,16 @@ class NoteController extends Controller
     {
         $validated = $request->validate([
             "title"=> "required",
-            "subtitle"=> "nullable",
+            "subtitle"=> "required",
             "message"=> "required",
             "priority"=> "required"
             ]);
 
         Note::create($validated);
 
-        return redirect()->route("notes.index")->with("success", "Note saved successfully");
+        return redirect()->route("note.index")->with("success","Note created Successfully");
 
+        
     }
 
     /**

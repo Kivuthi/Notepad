@@ -8,6 +8,23 @@
 </head>
 <body class="bg-slate-100 min-h-screen p-10">
 
+    @if(session('success'))
+    <div class="mb-4 p-4 bg-green-200 text-green-800 rounded-lg">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if($errors->any())
+    <div class="mb-4 p-4 bg-red-200 text-red-800 rounded-lg">
+        <ul class="list-disc list-inside">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
 <div class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
     <div class="w-full max-w-lg bg-white rounded-xl shadow-lg p-8">
         <!-- Header -->
@@ -36,13 +53,16 @@
             <!-- Content -->
             <div>
                 <label class="block font-semibold text-gray-700 mb-2">Message</label>
-                <textarea name="content" rows="5"
+                <textarea name="message" rows="5"
                     class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     placeholder="Write something interesting...">{{ old('message') }}</textarea>
             </div>
 
             {{-- footer --}}
-            <label for="">Priority</label>
+            <label for="priority">Priority</label>
+            <input type="text" name="priority" value="{{ old('priority') }}"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition @error('priority') border-red-500 @enderror"
+                placeholder="Priority: Urgent...">
 
             <!-- Buttons -->
             <div class="flex items-center justify-between">
