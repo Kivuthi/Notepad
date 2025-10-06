@@ -38,7 +38,7 @@ class NoteController extends Controller
 
         Note::create($validated);
 
-        return redirect()->route("note.index")->with("success","Note created Successfully");
+        return redirect()->route("note.index")->with("success","Note created successfully");
 
         
     }
