@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Auto-play every 6 seconds
   setInterval(nextSlide, 6000);
 });
+

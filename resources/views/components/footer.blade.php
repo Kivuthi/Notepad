@@ -7,7 +7,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M3 13l2-2m0 0l7-7 7 7M5 11v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
         </svg>
-        <span class="text-xl font-semibold text-white">West-Side Co.</span>
+        <span class="text-xl font-semibold text-white">Ratiah Co.</span>
       </div>
       <p class="text-sm leading-relaxed text-gray-400">
         Your premier automotive marketplace for trusted car, bike, and import dealers — all in one place.
@@ -21,7 +21,9 @@
         <li><a href="#" class="hover:text-orange-500 transition">Cars</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
-        <li><a href="#" class="hover:text-orange-500 transition">Dealers</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition">About Us</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
       </ul>
     </div>
 
@@ -30,8 +32,8 @@
       <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
       <ul class="space-y-2 text-sm">
         <li>📍 123 West-Side Street, Los Angeles, CA</li>
-        <li>📞 (+1) 555-123-4567</li>
-        <li>✉️ <a href="mailto:support@westsideco.com" class="hover:text-orange-500 transition">support@westsideco.com</a></li>
+        <li>📞 <a href="tel: +254 745 392 382" class="blank hover:text-orange-500 transition">+254 745 392 382</a></li>
+        <li>✉️ <a href="mailto:officialdee77@gmail.com" class="hover:text-orange-500 transition blank">officialdee77@gmail.com</a></li>
       </ul>
     </div>
 
@@ -48,8 +50,11 @@
         <a href="#" class="hover:text-orange-500 transition" aria-label="Twitter">
           <i class="fab fa-x-twitter text-xl"></i>
         </a>
-        <a href="#" class="hover:text-orange-500 transition" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in text-xl"></i>
+        <a href="#" class="hover:text-orange-500 transition" aria-label="Tik Tok">
+          <i class="fa-brands fa-tiktok text-xl"></i>
+        </a>
+        <a href="#" class="hover:text-orange-500 transition" aria-label="Tik Yok">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
         </a>
       </div>
     </div>
@@ -57,6 +62,7 @@
 
   <!-- Divider -->
   <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
-    © {{ date('Y') }} West-Side Co. All rights reserved.
+    © {{ date('Y') }} Ratiah Co. All rights reserved.
+    <p>Craft by <a href="#">Dennis Kivuthi Musyoka</a> </p>
   </div>
 </footer>

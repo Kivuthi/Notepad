@@ -18,7 +18,12 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Dealers</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
+
+
+
     </nav>
 
     <!-- Buttons -->
