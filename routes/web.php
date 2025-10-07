@@ -10,3 +10,7 @@ Route::post('/store', [NoteController::class,"store"])->name('note.store');
 
 //Admin
 Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard');
+
+
+//pages
+Route::get('/home', [PageController::class,'home'])->name("pages.index");

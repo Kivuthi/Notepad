@@ -21,7 +21,7 @@
 </div>
 
 {{-- Charts --}}
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+{{-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
     <div class="bg-white p-6 rounded-lg shadow">
         <h2 class="text-lg font-semibold mb-4">Monthly Sales</h2>
         <canvas id="salesChart" height="180"></canvas>
@@ -31,7 +31,7 @@
         <h2 class="text-lg font-semibold mb-4">Cars Sold by Brand</h2>
         <canvas id="brandChart" height="180"></canvas>
     </div>
-</div>
+</div> --}}
 
 {{-- Sellers Table --}}
 <div class="bg-white p-6 rounded-lg shadow mb-6">
