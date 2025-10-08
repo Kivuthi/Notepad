@@ -12,7 +12,7 @@
     >
       <div class="absolute inset-0 bg-black/60"></div>
       <div class="relative z-10 text-center text-white px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-3">West-Side Co.</h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Ratiah Co.</h1>
         <p class="text-lg md:text-xl mb-5">Your Premier Automotive Marketplace</p>
         <a href="#"
           class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">

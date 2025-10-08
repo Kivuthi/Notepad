@@ -14,3 +14,4 @@ Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard')
 
 //pages
 Route::get('/home', [PageController::class,'home'])->name("pages.index");
+Route::get("/cars", [PageController::class,"cars"])->name('pages.car');

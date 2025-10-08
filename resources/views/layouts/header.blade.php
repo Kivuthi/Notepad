@@ -1,9 +1,10 @@
-<header class="flex items-center justify-between bg-white shadow-md px-6 py-3">
+<header class="flex items-center justify-between bg-white shadow-md px-6 py-9">
     <div class="flex items-center space-x-3">
         <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none">
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
-        <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+        <p><h1 class="text-3xl">Ratiah Co.</h1></p> <br>
+        <h1 class="text-2xl text-orange-300 font-semibold text-gray-800">Dashboard</h1>
     </div>
 
     <div class="flex items-center space-x-4">
