@@ -18,6 +18,12 @@
 
         <h5 class="text-gray-900 uppercase text-md font-semibold px-3">Manage Content</h5>
 
+        <h5 class="text-gray-900 uppercase text-md font-semibold px-3">Home Page</h5>
+
+        <a href="#" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+            <i class="fa-solid fa-section mr-3"></i> Hero Section
+        </a>
+
         <a href="#" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
             <i class="fa-solid fa-car mr-3"></i> Featured Vehicles
         </a>

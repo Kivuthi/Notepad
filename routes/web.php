@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeaturedVehiclesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\PageController;
@@ -15,3 +16,8 @@ Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard')
 //pages
 Route::get('/home', [PageController::class,'home'])->name("pages.index");
 Route::get("/cars", [PageController::class,"cars"])->name('pages.car');
+
+//featured vehicles
+Route::get('/featuredVehicles', [FeaturedVehiclesController::class,'index'])->name('featuredVehicles.index ');
+Route::get('create', [FeaturedVehiclesController::class,'create'])->name('featuredVehicles.create ');
+Route::post('store ', [FeaturedVehiclesController::class,'store'])->name('featuredVehicles.store');
