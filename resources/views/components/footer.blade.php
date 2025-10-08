@@ -12,6 +12,15 @@
       <p class="text-sm leading-relaxed text-gray-400">
         Your premier automotive marketplace for trusted car, bike, and import dealers — all in one place.
       </p>
+      <ul class="space-y-2 m-1">
+        <li><h4 class="text-white text-xl font-serif mb-4">Working Hours</h4></li>
+        <li class="text-orange-500">Monday -  Friday</li>
+        <li>0800Hrs To 1800Hrs</li>
+        <li class="text-orange-500">Saturday</li>
+        <li>0900hrs To 1700Hrs</li>
+        <li class="text-orange-500">Sunday</li>
+        <li>CLOSED</li>
+      </ul>
     </div>
 
     <!-- Quick Links -->
@@ -29,9 +38,13 @@
 
     <!-- Contact -->
     <div>
-      <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
+      <h3 class="text-white text-xl font-semibold mb-4">Contact Us</h3>
       <ul class="space-y-2 text-sm">
-        <li>📍 123 West-Side Street, Los Angeles, CA</li>
+        <li class="text-lg">Ratiah Co.</li>
+        <li>📍 Moi Avenue, Mombasa, Kenya</li>
+        <li>Ratiah House, 1st Floor</li>
+        <li>P.O Box 80100</li>
+        <li>Mombasa, Kenya</li>
         <li>📞 <a href="tel: +254 745 392 382" class="blank hover:text-orange-500 transition">+254 745 392 382</a></li>
         <li>✉️ <a href="mailto:officialdee77@gmail.com" class="hover:text-orange-500 transition blank">officialdee77@gmail.com</a></li>
       </ul>

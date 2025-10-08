@@ -562,11 +562,11 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
       <div>
-        <h3 class="text-4xl font-extrabold text-yellow-400">10+</h3>
+        <h3 class="text-4xl font-extrabold text-yellow-400">7+</h3>
         <p class="mt-2 text-gray-200">Years of Automotive Excellence</p>
       </div>
       <div>
-        <h3 class="text-4xl font-extrabold text-yellow-400">250+</h3>
+        <h3 class="text-4xl font-extrabold text-yellow-400">25+</h3>
         <p class="mt-2 text-gray-200">Cars Sold Monthly</p>
       </div>
       <div>
@@ -574,7 +574,7 @@
         <p class="mt-2 text-gray-200">KES Worth of Vehicles Sold</p>
       </div>
       <div>
-        <h3 class="text-4xl font-extrabold text-yellow-400">5000+</h3>
+        <h3 class="text-4xl font-extrabold text-yellow-400">100+</h3>
         <p class="mt-2 text-gray-200">Happy Customers</p>
       </div>
     </div>
@@ -602,12 +602,169 @@
           <li class="flex items-start"><span class="text-green-600 mr-2">✔</span> Experienced sales team and import advisors</li>
           <li class="flex items-start"><span class="text-green-600 mr-2">✔</span> Easy financing and flexible payment plans</li>
           <li class="flex items-start"><span class="text-green-600 mr-2">✔</span> Fast delivery and after-sales support</li>
-        </ul>
+        </ul>  .
+        <p> 
+        <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg px-4 py-2 text-sm font-semibold transition">More About Us-></a>
+        </p>  
       </div>
     </div>
   </div>
 </section>
 
+<section class="bg-gray-50 py-12 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
+      Latest Automotive Insights
+    </h2>
+    <p class="text-gray-600 mb-10">
+      Stay informed with the latest trends, car buying guides, and dealer insights
+    </p>
+
+    <!-- Blog Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img
+          src="{{ asset('/images/blogs/car-financing.jpg') }}"
+          alt="Car Financing"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5 text-left">
+          <p class="text-sm text-gray-500 mb-2">October 8, 2025</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            Smart Financing Options for Your Next Vehicle
+          </h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Learn how to secure the best car financing deals and make informed decisions before buying...
+          </p>
+          <p class="text-sm text-gray-500 mb-3">By West-Side Co. Editorial Team</p>
+          <a
+            href="#"
+            class="inline-block px-4 py-2 text-blue-900 border border-blue-900 rounded-md hover:bg-blue-900 hover:text-white transition"
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img
+          src="{{ asset('/images/blogs/electric.webp') }}"
+          alt="Electric Cars"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5 text-left">
+          <p class="text-sm text-gray-500 mb-2">September 22, 2025</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            The Rise of Electric Vehicles in 2025
+          </h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Electric cars are transforming the automotive world — here’s what you need to know about ownership, range, and cost...
+          </p>
+          <p class="text-sm text-gray-500 mb-3">By Auto Trends Journal</p>
+          <a
+            href="#"
+            class="inline-block px-4 py-2 text-blue-900 border border-blue-900 rounded-md hover:bg-blue-900 hover:text-white transition"
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img
+          src="{{ asset('/images/blogs/car-care.png') }}"
+          alt="Car Maintenance"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5 text-left">
+          <p class="text-sm text-gray-500 mb-2">August 10, 2025</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            10 Essential Car Maintenance Tips
+          </h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Keep your car in top shape with these essential maintenance tips from certified experts...
+          </p>
+          <p class="text-sm text-gray-500 mb-3">By West-Side Co. Service Team</p>
+          <a
+            href="#"
+            class="inline-block px-4 py-2 text-blue-900 border border-blue-900 rounded-md hover:bg-blue-900 hover:text-white transition"
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="mt-10">
+      <a
+        href="#"
+        class="inline-block bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition"
+      >
+        View More Insights
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-50 py-16 px-4 md:px-8 text-center relative overflow-hidden">
+  <div class="max-w-3xl mx-auto">
+    <!-- Animated Emojis Floating -->
+    <div class="absolute inset-0 pointer-events-none">
+      <span class="absolute text-5xl animate-bounce-slow left-10 top-8">🚗</span>
+      <span class="absolute text-5xl animate-bounce-delay right-12 bottom-8">🏍️</span>
+      <span class="absolute text-4xl animate-bounce-slower left-1/2 bottom-4">🔑</span>
+    </div>
+
+    <!-- CTA Content -->
+    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2 relative z-10">
+      READY TO DRIVE YOUR DREAM CAR?
+    </h2>
+    <p class="text-gray-600 mb-6 relative z-10">
+      Our experienced team is here to help you find, finance, or sell your next vehicle 🚘
+    </p>
+
+    <div class="flex justify-center space-x-4 relative z-10">
+      <a
+        href="#contact"
+        class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center space-x-2"
+      >
+        <span>📞</span>
+        <span>Contact Us Today</span>
+      </a>
+
+      <a
+        href="#team"
+        class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center space-x-2"
+      >
+        <span>👨‍💼</span>
+        <span>Meet Our Team</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes bounce-delay {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+    @keyframes bounce-slower {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-bounce-slow { animation: bounce-slow 3s infinite ease-in-out; }
+    .animate-bounce-delay { animation: bounce-delay 4s infinite ease-in-out; }
+    .animate-bounce-slower { animation: bounce-slower 5s infinite ease-in-out; }
+  </style>
+</section>
 
 
 <script>
