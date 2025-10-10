@@ -12,7 +12,7 @@ class FeaturedVehiclesController extends Controller
      */
     public function index()
     {
-        $vehicles = FeaturedVehicle::latest()->get();
+        $vehicles = featuredVehicle::latest()->get();
         return view("featuredVehicles.index" , compact("vehicles"));
     }
 

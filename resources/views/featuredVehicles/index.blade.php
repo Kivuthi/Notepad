@@ -1,11 +1,11 @@
 
-<a href="{{ route('note.create') }}" class="inline-flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-md text-sm">Add items</a>
+<a href="{{ route('featuredVehicles.create') }}" class="inline-flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-md text-sm">Add Vehicles</a>
   
     @if(session('success'))
         <p class="mt-4 text-green-600">{{ session('success') }}</p>
     @endif
 
-<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+{{-- <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('images/audi.webp') }}" alt="2023 Toyota Camry" class="w-full h-56 object-cover">
         <div class="absolute top-3 left-3 flex flex-col space-y-1">
@@ -62,14 +62,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+    @foreach($featuredVehicles as $vehicle)
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('images/audi.webp') }}" alt="2023 Toyota Camry" class="w-full h-56 object-cover">
         <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">arrival</span>
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
+          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">{{$vehicle->arrival}}</span>
+          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">{{$vehicle->featured}}</span>
         </div>
         <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -82,16 +83,16 @@
       </div>
 
       <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">make</h3>
+        <h3 class="font-bold text-lg text-gray-900 mb-2">{{$vehicle->make}}</h3>
 
         <div class="text-gray-600 text-sm space-y-1 mb-3">
           <div class="flex justify-between">
-            <span>year</span><span>mileage</span>
+            <span>{{$vehicle->year}}</span><span>{{$vehicle->mileage}}</span>
           </div>
           <div class="flex justify-between">
-            <span>powertrain</span><span>transmission</span>
+            <span>{{$vehicle->powertrain}}</span><span>{{$vehicle->transmission}}</span>
           </div>
-          <div>location</div>
+          <div>{{$vehicle->location}}</div>
         </div>
 
         <div class="flex items-center justify-between border-t pt-3">
@@ -100,7 +101,7 @@
               class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">C
             </div>
             <div>
-              <p class="text-sm font-semibold">company</p>
+              <p class="text-sm font-semibold">{{$vehicle->company}}</p>
               <p class="text-xs text-gray-500 flex items-center">
                 ⭐ rating <span class="ml-1">✓ Verified</span>
               </p>
@@ -122,3 +123,5 @@
         </div>
       </div>
     </div>
+    @endforeach
+    
