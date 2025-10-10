@@ -24,7 +24,7 @@
     @foreach($vehicles as $vehicle)
         <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
             <div class="relative">
-                <img src="{{ asset('images/audi.webp') }}" alt="2023 Toyota Camry" class="w-full h-56 object-cover">
+                <img src="{{ asset('storage/' . $vehicle->image) }}" alt="{{ $vehicle->make }}">
                 <div class="absolute top-3 left-3 flex flex-col space-y-1">
                     <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                         {{ $vehicle->arrival ? 'Arrival' : '' }}
