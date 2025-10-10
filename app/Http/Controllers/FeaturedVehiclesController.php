@@ -12,7 +12,7 @@ class FeaturedVehiclesController extends Controller
      */
     public function index()
     {
-        $vehicles = featuredVehicle::latest()->get();
+        $vehicles = FeaturedVehicle::latest()->get();
         return view("featuredVehicles.index" , compact("vehicles"));
     }
 
@@ -28,24 +28,34 @@ class FeaturedVehiclesController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            "image"=> "required",
-            "arrival"=> "nullable",
-            "price"=> "required",
-            "make"=> "required",
-            "year"=> "required",
-            "mileage"=> "required",
-            "powertrain"=> "required",
-            "transmission"=> "required",
-            "location"=> "required",
-            "company"=> "required",
-            "rating"=> "required"
-        ]) ;
+{
+    $validated = $request->validate([
+        'make' => 'required|string|max:255',
+        'model' => 'required|string|max:255',
+        'year' => 'required|integer',
+        'mileage' => 'nullable|integer',
+        'powertrain' => 'nullable|string',
+        'transmission' => 'nullable|string',
+        'price' => 'nullable|numeric',
+        'location' => 'nullable|string',
+        'image' => 'nullable|image',
+    ]);
 
-        FeaturedVehicle::create($validated);
-        return redirect()->route("featuredVehicles.index")->with("success","Featured Vehicles Created Successfully");
+    // Handle boolean fields (checkboxes)
+    $validated['featured'] = $request->has('featured');
+    $validated['arrival'] = $request->has('arrival');
+
+    // Handle image upload
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('vehicles', 'public');
+        $validated['image'] = $path;
     }
+
+    FeaturedVehicle::create($validated);
+
+    return redirect()->route('featuredVehicles.index')
+        ->with('success', 'Vehicle added successfully!');
+}
 
     /**
      * Display the specified resource.

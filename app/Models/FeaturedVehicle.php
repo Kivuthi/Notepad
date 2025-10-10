@@ -2,21 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class FeaturedVehicle extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-    "image",
-    "arrival",
-    "price",
-    "make",
-    "year",
-    "mileage",
-    "powertrain",
-    "transmission",
-    "location",
-    "company",
-    "rating"
+        'make',
+        'model',
+        'year',
+        'mileage',
+        'powertrain',
+        'transmission',
+        'price',
+        'location',
+        'image',
+        'featured',
+        'company',
+        'arrival',
     ];
 }

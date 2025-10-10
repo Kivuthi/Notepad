@@ -18,8 +18,8 @@ Route::get('/home', [PageController::class,'home'])->name("pages.index");
 Route::get("/cars", [PageController::class,"cars"])->name('pages.car');
 
 //featured vehicles
-Route::get('/featuredVehicles', [FeaturedVehiclesController::class,'index'])->name('featuredVehicles.index');
-Route::get('/create', [FeaturedVehiclesController::class,'create'])->name('featuredVehicles.create');
-Route::post('/store ', [FeaturedVehiclesController::class,'store'])->name('featuredVehicles.store');
+// Route::get('/featuredVehicles', [FeaturedVehiclesController::class,'index'])->name('featuredVehicles.index');
+// Route::get('/create', [FeaturedVehiclesController::class,'create'])->name('featuredVehicles.create');
+// Route::post('/store ', [FeaturedVehiclesController::class,'store'])->name('featuredVehicles.store');
 
-// Route::resource('featuredVehicles', FeaturedVehiclesController::class);
+Route::resource('featuredVehicles', FeaturedVehiclesController::class);

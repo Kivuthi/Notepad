@@ -14,21 +14,21 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->string('arrival');
-            $table->string('price');
-            $table->string('make');
-            $table->string('year');
-            $table->string('mileage');
-            $table->string('powertrain');
-            $table->string('transmission');
-            $table->string('location');
-            $table->string('company');
-            $table->string('rating');
-            $table->string('exterior_color');
-            $table->string('engine');
-            $table->string('drive');
-            $table->string('interrior_color');
-            $table->string('seats');
+            $table->string('arrival')->required;
+            $table->string('price')->required;
+            $table->string('make')->required;
+            $table->string('year')->required;
+            $table->string('mileage')->required;
+            $table->string('powertrain')->required;
+            $table->string('transmission')->required;
+            $table->string('location')->required;
+            $table->string('company')->required;
+            $table->string('rating')->required;
+            $table->string('exterior_color')->required;
+            $table->string('engine')->required;
+            $table->string('drive')->required;
+            $table->string('interrior_color')->required;
+            $table->string('seats')->required;
             $table->timestamps();
         });
     }

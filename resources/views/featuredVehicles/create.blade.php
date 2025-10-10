@@ -102,6 +102,13 @@
     </div>
   </div>
 
+  {{-- company --}}
+  <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-1">Company</label>
+      <input type="text" name="company" placeholder="Company Name" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:outline-none">
+    </div>
+  </div>
+
   <!-- Featured & Status -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="flex items-center space-x-2">
@@ -127,13 +134,4 @@
       </button>
   </div>
 
-  {{-- <div class="pt-4 flex justify-end">
-    <a href="{{ route('featuredVehicles.index') }}"
-      class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium transition">
-      Cancel
-    </a>
-    <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-6 py-2 rounded-lg shadow">
-      Add Vehicle
-    </button>
-  </div> --}}
 </form>
