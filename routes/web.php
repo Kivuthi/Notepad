@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\InsightsController;
+use App\Http\Controllers\CarController;
 
 // Route::get("/", [NoteController::class,"index"])->name("note.index");
 // Route::get("/create", [NoteController::class,"create"])->name("note.create");
@@ -23,3 +24,6 @@ Route::resource('featuredVehicles', FeaturedVehiclesController::class);
 
 //insights
 Route::resource('insights', InsightsController::class);
+
+//cars
+Route::resource('cars', CarController::class);

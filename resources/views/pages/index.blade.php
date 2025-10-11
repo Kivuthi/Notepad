@@ -133,10 +133,13 @@
           <label class="block text-sm font-medium text-gray-700 mb-1">Price Range</label>
           <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-orange-500 focus:outline-none">
             <option>Any</option>
-            <option>Under $20k</option>
-            <option>$20k - $50k</option>
-            <option>$50k - $100k</option>
-            <option>Above $100k</option>
+            <option>Under 500K</option>
+            <option>500K - 1M</option>
+            <option>1M - 2M</option>
+            <option>2M - 3M</option>
+            <option>3M - 5M</option>
+            <option>5M - 10M</option>
+            <option>Above 10M</option>
           </select>
         </div>
 
@@ -145,10 +148,24 @@
           <label class="block text-sm font-medium text-gray-700 mb-1">Vehicle Type</label>
           <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-orange-500 focus:outline-none">
             <option>All</option>
+            <option>Convertible</option>
+            <option>Coupe</option>
+            <option>Minivan</option>
+            <option>MPV</option>
+            <option>Sport-utility vehicle</option>
+            <option>Hybrid</option>   
+            <option>Ute(pick-up truck)</option>
+            <option>Hatchback</option>
             <option>Sedan</option>
+            <option>Station Wagon</option>
+            <option>Pickup Trucks</option>
+            <option>Estates</option>
+            <option>Off-road vehicle</option>
+            <option>Coupé and convertible</option>
             <option>SUV</option>
-            <option>Truck</option>
-            <option>Motorbike</option>
+            <option>Sports car</option>
+            <option>Crossover</option>
+            <option>Luxury</option>
           </select>
         </div>
 
@@ -161,6 +178,18 @@
             <option>2024</option>
             <option>2023</option>
             <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+            <option>2011</option>
+            <option>2010</option>
           </select>
         </div>
       </div>

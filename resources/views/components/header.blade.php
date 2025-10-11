@@ -15,7 +15,7 @@
 
     <!-- Navigation links -->
     <nav class="hidden md:flex items-center space-x-8">
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
+      <a href="{{ route('cars.index') }}" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
@@ -54,7 +54,9 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Dealers</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
+      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
       
       <button
         class="border border-gray-400 text-gray-700 hover:bg-gray-100 rounded-lg px-4 py-2 text-sm font-medium transition">

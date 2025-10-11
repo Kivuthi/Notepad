@@ -32,6 +32,16 @@
             <i class="fa-solid fa-blog mr-3"></i> Latest Insights
         </a>
 
+        <h5 class="text-gray-900 uppercase text-md font-semibold px-3">Products</h5>
+
+        <a href="{{ route('cars.index') }}" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+            <i class="fa-solid fa-car-rear mr-3"></i> Cars
+        </a>
+
+        <a href="#" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+            <i class="fa-solid fa-motorcycle mr-3"></i> Bikes
+        </a>
+
         <h5 class="text-gray-900 uppercase text-md font-semibold px-3">Financials</h5>
 
         <a href="#" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">

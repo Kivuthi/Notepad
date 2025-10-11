@@ -1,6 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+
+@php
+    $hour = now()->format('H');
+    if ($hour < 12) {
+        $greeting = 'Good Morning';
+    } elseif ($hour < 17) {
+        $greeting = 'Good Afternoon';
+    } elseif ($hour < 20) {
+        $greeting = 'Good Evening';
+    } else {
+        $greeting = 'Good Night';
+    }
+@endphp
+
+<h2 class="m-7 text-3xl text-center font-serif">
+    {{ $greeting }}, Chairman 👋
+</h2>
+
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
     <div class="bg-white shadow rounded-lg p-4">
         <h3 class="text-gray-500 text-sm">Total Sales</h3>
