@@ -51,7 +51,7 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
     <nav class="flex flex-col space-y-3 px-6 py-4">
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
+      <a href="{{ route('cars.index') }}" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>

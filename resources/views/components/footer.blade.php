@@ -27,7 +27,7 @@
     <div>
       <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2">
-        <li><a href="#" class="hover:text-orange-500 transition">Cars</a></li>
+        <li><a href="{{ route('cars.index') }}" class="hover:text-orange-500 transition">Cars</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
@@ -76,6 +76,6 @@
   <!-- Divider -->
   <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
     © {{ date('Y') }} Ratiah Co. All rights reserved.
-    <p>Craft by <a href="#">Dennis Kivuthi Musyoka</a> </p>
+    <p>Craft by <a href="https://kivuthi.github.io/Portfolio-Website/">Kivuthi</a> </p>
   </div>
 </footer>
