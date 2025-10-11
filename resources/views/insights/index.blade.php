@@ -11,15 +11,21 @@
 </head>
 <body class="bg-gray-50">
 
-    <h1 class="text-gray-800 text-3xl m-6 font-serif">LATEST INSIGHTS TO PUBLISH</h1>
+  <div class="flex gap-370 p-4">
+      <a href="{{ route('dashboard') }}"
+         class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition duration-200">
+          <i class="fa-solid fa-backward"></i>
+          Dashboard
+      </a>
 
-  <div class="flex justify-end p-4">
       <a href="{{ route('insights.create') }}"
          class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition duration-200">
           <i class="fa-solid fa-plus"></i>
           Add Latest Insights
       </a>
   </div>
+
+    <h1 class="text-gray-800 text-3xl m-6 font-serif text-center">LATEST INSIGHTS TO PUBLISH</h1>
 
   {{-- ✅ Wrap all cards inside one grid --}}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
