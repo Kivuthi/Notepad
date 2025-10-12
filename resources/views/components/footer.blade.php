@@ -31,7 +31,7 @@
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
-        <li><a href="#" class="hover:text-orange-500 transition">About Us</a></li>
+        <li><a href="{{ route('pages.about') }}" class="hover:text-orange-500 transition">About Us</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
       </ul>
     </div>

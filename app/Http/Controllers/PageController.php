@@ -13,4 +13,8 @@ class PageController extends Controller
     public function home() {
         return view("pages.index");
     }
+
+    public function about() {
+        return view("pages.about");
+    }
 }

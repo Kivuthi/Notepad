@@ -19,7 +19,7 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
+      <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
 
 
@@ -55,7 +55,7 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
+      <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
       
       <button
