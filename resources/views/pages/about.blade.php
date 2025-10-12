@@ -113,4 +113,67 @@
   </div>
 </div>
 
+{{-- testimonials --}}
+
+<section class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-gray-800 dark:text-gray-100">
+      What Our Clients Say
+    </h2>
+
+    <div class="relative overflow-hidden">
+      <!-- Testimonials wrapper -->
+      <div class="flex animate-slide space-x-8">
+        
+        <!-- Testimonial Card 1 -->
+        <div class="min-w-[300px] max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center text-gray-700 dark:text-gray-200">
+          <img src="static/client1.jpg" alt="Client 1" class="w-20 h-20 rounded-full mb-4 object-cover border-4 border-red-500">
+          <p class="italic mb-4">"Gabitech helped me import my dream car effortlessly. Their service was fast, professional, and transparent!"</p>
+          <h4 class="font-semibold text-lg">— James Mwangi</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Customer, Nairobi</span>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="min-w-[300px] max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center text-gray-700 dark:text-gray-200">
+          <img src="static/client2.jpg" alt="Client 2" class="w-20 h-20 rounded-full mb-4 object-cover border-4 border-red-500">
+          <p class="italic mb-4">"Their clearing and forwarding services saved my business time and money. Highly recommended!"</p>
+          <h4 class="font-semibold text-lg">— Amina Yusuf</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Business Owner, Mombasa</span>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="min-w-[300px] max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center text-gray-700 dark:text-gray-200">
+          <img src="static/client3.jpg" alt="Client 3" class="w-20 h-20 rounded-full mb-4 object-cover border-4 border-red-500">
+          <p class="italic mb-4">"Professional team with great communication. My import process was smooth and stress-free."</p>
+          <h4 class="font-semibold text-lg">— Daniel Otieno</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Client, Kisumu</span>
+        </div>
+
+        <!-- Duplicate for seamless loop -->
+        <div class="min-w-[300px] max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center text-gray-700 dark:text-gray-200">
+          <img src="static/client1.jpg" alt="Client 1" class="w-20 h-20 rounded-full mb-4 object-cover border-4 border-red-500">
+          <p class="italic mb-4">"Gabitech helped me import my dream car effortlessly. Their service was fast, professional, and transparent!"</p>
+          <h4 class="font-semibold text-lg">— James Mwangi</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Customer, Nairobi</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Animation -->
+<style>
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-slide {
+  display: flex;
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+</style>
+
+
 @endsection

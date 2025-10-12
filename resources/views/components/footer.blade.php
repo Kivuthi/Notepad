@@ -32,7 +32,7 @@
         <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
         <li><a href="{{ route('pages.about') }}" class="hover:text-orange-500 transition">About Us</a></li>
-        <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
+        <li><a href="{{ route('pages.contact') }}" class="hover:text-orange-500 transition">Contact Us</a></li>
       </ul>
     </div>
 
@@ -41,8 +41,9 @@
       <h3 class="text-white text-xl font-semibold mb-4">Contact Us</h3>
       <ul class="space-y-2 text-sm">
         <li class="text-lg">Ratiah Co.</li>
-        <li>📍 Moi Avenue, Mombasa, Kenya</li>
+        <li>Kwashibu Road, Mombasa, Kenya</li>
         <li>Ratiah House, 1st Floor</li>
+        <li>Opposite Sizzling Flame Hotel</li>
         <li>P.O Box 80100</li>
         <li>Mombasa, Kenya</li>
         <li>📞 <a href="tel: +254 745 392 382" class="blank hover:text-orange-500 transition">+254 745 392 382</a></li>

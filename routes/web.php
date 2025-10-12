@@ -19,6 +19,7 @@ Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard')
 Route::get('/home', [PageController::class,'home'])->name("pages.index");
 Route::get("/cars", [PageController::class,"cars"])->name('pages.car');
 Route::get('/about', [PageController::class,'about'])->name('pages.about');
+Route::get('/contact', [PageController::class,'contact'])->name('pages.contact');
 
 //featured vehicles
 Route::resource('featuredVehicles', FeaturedVehiclesController::class);
