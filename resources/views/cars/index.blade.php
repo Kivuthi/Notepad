@@ -67,12 +67,32 @@ body class="bg-gray-100">
     <div class="grid grid-cols-2 gap-4">
       @php
         $brands = [
-          ['name' => 'Toyota', 'logo' => 'Toyota.png'],
-          ['name' => 'Nissan', 'logo' => 'Nissan.png'],
+          ['name' => 'Audi', 'logo' => 'Audi.png'],
+          ['name' => 'BMW', 'logo' => 'BMW.png'],
+          ['name' => 'Ferrari', 'logo' => 'Ferrari.png'],
           ['name' => 'Honda', 'logo' => 'honda.png'],
+          ['name' => 'Hyundai', 'logo' => 'Hyundai.png'],
+          ['name' => 'Infinity', 'logo' => 'infinity.png'],
+          ['name' => 'Isuzu', 'logo' => 'Isuzu.png'],
+          ['name' => 'Jaguar', 'logo' => 'Jaguar.png'],
+          ['name' => 'Jeep', 'logo' => 'Jeep.png'],
+          ['name' => 'Landrover', 'logo' => 'landrover.png'],
+          ['name' => 'Lexus', 'logo' => 'Lexus.png'],
+          ['name' => 'Maserati', 'logo' => 'maserati.png'],
           ['name' => 'Mazda', 'logo' => 'mazda-1.png'],
           ['name' => 'Mercedes', 'logo' => 'Mercedes-Benz.png'],
-          ['name' => 'BMW', 'logo' => 'BMW.png'],
+          ['name' => 'Mini', 'logo' => 'Mini.png'],
+          ['name' => 'Mitsubishi', 'logo' => 'Mitsubishi.png'],
+          ['name' => 'Nissan', 'logo' => 'Nissan.png'],
+          ['name' => 'Peugeot', 'logo' => 'Peugeot.png'],
+          ['name' => 'Porsche', 'logo' => 'Porsche.png'],
+          ['name' => 'Rolls-Royce', 'logo' => 'rolls-royce-logo.png'],
+          ['name' => 'Subaru', 'logo' => 'Subaru.png'],
+          ['name' => 'Suzuki', 'logo' => 'Suzuki.png'],
+          ['name' => 'Tesla', 'logo' => 'Tesla.png'],
+          ['name' => 'Toyota', 'logo' => 'Toyota.png'],
+          ['name' => 'Volkswagen', 'logo' => 'Volkswagen.png'],
+          ['name' => 'Volvo', 'logo' => 'Volvo-1.png'],
         ];
       @endphp
 
