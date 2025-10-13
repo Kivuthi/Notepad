@@ -56,10 +56,37 @@ body class="bg-gray-100">
             Want to sell your vehicle or Motorbike?.<br>
             Click this link to Sell or Enlist your vehicle.
         </p>
-        <a href="#" class="text-white font-semibold underline hover:text-blue-400 transition">
+        <a href="{{ route('pages.sellcar') }}" class="text-white font-semibold underline hover:text-blue-400 transition">
             Enlist your Vehicle or Motorbike
         </a>
     </div>
+
+      <!-- 🏷️ Brand Logos Section -->
+  <div class="mt-10">
+    <h3 class="font-semibold mb-3">Popular Brands</h3>
+    <div class="grid grid-cols-2 gap-4">
+      @php
+        $brands = [
+          ['name' => 'Toyota', 'logo' => 'Toyota.png'],
+          ['name' => 'Nissan', 'logo' => 'Nissan.png'],
+          ['name' => 'Honda', 'logo' => 'honda.png'],
+          ['name' => 'Mazda', 'logo' => 'mazda-1.png'],
+          ['name' => 'Mercedes', 'logo' => 'Mercedes-Benz.png'],
+          ['name' => 'BMW', 'logo' => 'BMW.png'],
+        ];
+      @endphp
+
+      @foreach ($brands as $brand)
+        <a href="{{ route('cars.index', ['brand' => strtolower($brand['name'])]) }}"
+           class="flex flex-col items-center bg-gray-700 dark:bg-gray-100 p-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
+          <img src="{{ asset('images/logos/' . $brand['logo']) }}" 
+               alt="{{ $brand['name'] }}" 
+               class="w-14 h-14 object-contain mb-1">
+          <span class="text-xs font-medium">{{ $brand['name'] }}</span>
+        </a>
+      @endforeach
+    </div>
+  </div>
 
   </aside>
 

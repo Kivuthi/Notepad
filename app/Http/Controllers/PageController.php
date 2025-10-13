@@ -21,4 +21,8 @@ class PageController extends Controller
     public function contact() {
         return view("pages.contact");
     }
+
+    public function sellcar() {
+        return view("pages.sellcar");
+    }
 }

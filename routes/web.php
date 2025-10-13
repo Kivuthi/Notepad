@@ -20,6 +20,7 @@ Route::get('/home', [PageController::class,'home'])->name("pages.index");
 Route::get("/cars", [PageController::class,"cars"])->name('pages.car');
 Route::get('/about', [PageController::class,'about'])->name('pages.about');
 Route::get('/contact', [PageController::class,'contact'])->name('pages.contact');
+Route::get('/sellcar', [PageController::class,'sellcar'])->name('pages.sellcar');
 
 //featured vehicles
 Route::resource('featuredVehicles', FeaturedVehiclesController::class);

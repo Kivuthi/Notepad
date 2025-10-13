@@ -31,6 +31,7 @@
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
+        <li><a href="{{ route('pages.sellcar') }}" class="hover:text-orange-500 transition">Sell your Car</a></li>
         <li><a href="{{ route('pages.about') }}" class="hover:text-orange-500 transition">About Us</a></li>
         <li><a href="{{ route('pages.contact') }}" class="hover:text-orange-500 transition">Contact Us</a></li>
       </ul>
@@ -77,6 +78,6 @@
   <!-- Divider -->
   <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
     © {{ date('Y') }} Ratiah Co. All rights reserved.
-    <p>Craft by <a href="https://kivuthi.github.io/Portfolio-Website/">Kivuthi</a> </p>
+    <p>Craft by <a href="https://kivuthi.github.io/Portfolio-Website/" class="hover:text-orange-500 transition">Kivuthi</a> </p>
   </div>
 </footer>

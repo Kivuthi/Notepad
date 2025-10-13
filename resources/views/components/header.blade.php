@@ -19,6 +19,7 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
+      <a href="{{ route('pages.sellcar') }}" class="text-gray-700 hover:text-orange-600 font-medium">Sell your Car</a>
       <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
       <a href="{{ route('pages.contact') }}" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
 
@@ -31,10 +32,6 @@
       <button
         class="border border-gray-400 text-gray-700 hover:bg-gray-100 rounded-lg px-4 py-2 text-sm font-medium transition">
         Login
-      </button>
-      <button
-        class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg px-4 py-2 text-sm font-semibold transition">
-        Become a Seller
       </button>
     </div>
 
@@ -55,6 +52,7 @@
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
+      <a href="{{ route('pages.sellcar') }}" class="text-gray-700 hover:text-orange-600 font-medium">Sell your Car</a>
       <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
       <a href="{{ route('pages.contact') }}" class="text-gray-700 hover:text-orange-600 font-medium">Contact Us</a>
       
