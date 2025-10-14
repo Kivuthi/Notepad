@@ -2,9 +2,9 @@
     class="fixed md:relative bg-gradient-to-r from-pink-200 to-red-300 text-white w-64 shadow-xl h-screen p-4 space-y-6 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
 
     <div class="flex items-center space-x-3 px-3">
-        <img src="https://i.pravatar.cc/50" alt="User" class="w-10 h-10 rounded-full">
+        <img src="#" alt="User" class="w-10 h-10 rounded-full">
         <div>
-            <h2 class="text-gray-900 font-semibold">Dennis Musyoka</h2>
+            <h2 class="text-gray-900 font-semibold">{{ auth()->user()->name }}</h2>
             <p class="text-gray-500 text-sm">Chairman</p>
         </div>
     </div>

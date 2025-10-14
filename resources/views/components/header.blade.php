@@ -29,10 +29,10 @@
 
     <!-- Buttons -->
     <div class="flex items-center space-x-3">
-      <button
-        class="border border-gray-400 text-gray-700 hover:bg-gray-100 rounded-lg px-4 py-2 text-sm font-medium transition">
-        Login
-      </button>
+        <a href="{{ route('login') }}" 
+        class="border border-gray-400 text-gray-700 hover:bg-orange-400 rounded-lg px-4 py-2 text-sm font-medium transition">
+          Login
+        </a>
     </div>
 
     <!-- Mobile Menu Button -->

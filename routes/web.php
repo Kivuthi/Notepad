@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FeaturedVehiclesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
@@ -12,8 +13,10 @@ use App\Http\Controllers\CarController;
 // Route::post('/store', [NoteController::class,"store"])->name('note.store');
 
 //Admin
-Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [PageController::class,'dashboard'])->name('dashboard');
+});
 
 //pages
 Route::get('/home', [PageController::class,'home'])->name("pages.index");
@@ -30,3 +33,10 @@ Route::resource('insights', InsightsController::class);
 
 //cars
 Route::resource('cars', CarController::class);
+
+//auth
+Route::get('/register', [AuthController::class,'register'])->name('auth.register');
+Route::get('/login', [AuthController::class,'login'])->name('login');
+Route::post('/register', [AuthController::class,'registerPost'])->name('auth.registerPost');
+Route::post('/login', [AuthController::class,'loginPost'])->name('auth.login');
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');
