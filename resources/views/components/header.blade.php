@@ -17,7 +17,7 @@
     <nav class="hidden md:flex items-center space-x-8">
       <a href="{{ route('cars.index') }}" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
+      <a href="{{ route('pages.import') }}" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
       <a href="{{ route('pages.sellcar') }}" class="text-gray-700 hover:text-orange-600 font-medium">Sell your Car</a>
       <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>
@@ -50,7 +50,7 @@
     <nav class="flex flex-col space-y-3 px-6 py-4">
       <a href="{{ route('cars.index') }}" class="text-gray-700 hover:text-orange-600 font-medium">Cars</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Bikes</a>
-      <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
+      <a href="{{ route('pages.import') }}" class="text-gray-700 hover:text-orange-600 font-medium">Import</a>
       <a href="#" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
       <a href="{{ route('pages.sellcar') }}" class="text-gray-700 hover:text-orange-600 font-medium">Sell your Car</a>
       <a href="{{ route('pages.about') }}" class="text-gray-700 hover:text-orange-600 font-medium">About Us</a>

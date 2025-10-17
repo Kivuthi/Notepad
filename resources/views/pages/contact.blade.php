@@ -16,7 +16,7 @@
       <h1 class="text-3xl md:text-4xl font-extrabold mb-4">CONTACT US</h1>
       <div class="text-sm mb-4">
         <a href="{{ route('pages.index') }}" class="text-red-500 hover:underline">Home</a>
-        <span class="text-gray-400"> / About us</span>
+        <span class="text-gray-400"> / Contact us</span>
       </div>
       <p class="text-gray-300 leading-relaxed">
         Contact <span class="font-semibold text-white">Ratiah co</span>, your trusted partner in automotive solutions and logistics,

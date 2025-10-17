@@ -93,6 +93,20 @@
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
                             </svg>
                         </button>
+
+            <a href="{{ route('featuredVehicles.edit', $vehicle->id) }}"
+               class="inline-block px-4 py-1.5 bg-yellow-400 hover:bg-yellow-500 text-white text-sm font-semibold rounded-md shadow transition">
+               <i class="fa fa-pen mr-1"></i>Edit
+            </a>
+
+            <form action="{{ route('featuredVehicles.destroy', $vehicle->id) }}" method="POST" class="inline-block" 
+                  onsubmit="return confirm('Are you sure you want to delete this vehicle?');">
+              @csrf
+              @method('DELETE')
+              <button type="submit" 
+                class="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-md shadow transition">
+                <i class="fa fa-trash mr-1"></i>Delete
+              </button>
                     </div>
                 </div>
             </div>

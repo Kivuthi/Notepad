@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use App\Models\FeaturedVehicle;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -11,7 +11,8 @@ class PageController extends Controller
     }
 
     public function home() {
-        return view("pages.index");
+        $Vehicles = \App\Models\FeaturedVehicle::all();
+        return view("pages.index", compact("Vehicles"));
     }
 
     public function about() {
@@ -24,5 +25,9 @@ class PageController extends Controller
 
     public function sellcar() {
         return view("pages.sellcar");
+    }
+
+    public function import() {
+        return view("pages.import");
     }
 }

@@ -24,6 +24,7 @@ Route::get("/cars", [PageController::class,"cars"])->name('pages.car');
 Route::get('/about', [PageController::class,'about'])->name('pages.about');
 Route::get('/contact', [PageController::class,'contact'])->name('pages.contact');
 Route::get('/sellcar', [PageController::class,'sellcar'])->name('pages.sellcar');
+Route::get('/import', [PageController::class,'import'])->name('pages.import');
 
 //featured vehicles
 Route::resource('featuredVehicles', FeaturedVehiclesController::class);

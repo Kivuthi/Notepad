@@ -189,7 +189,7 @@
             <option>2013</option>
             <option>2012</option>
             <option>2011</option>
-            <option>2010</option>
+            <option>20</option>
           </select>
         </div>
       </div>
@@ -222,358 +222,75 @@
   <!-- Vehicle Cards Grid -->
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
     <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/audi.webp') }}" alt="2023 Toyota Camry" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">NEW</span>
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$32,500</div>
+    @foreach($Vehicles as $vehicle)
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <div class="relative">
+                <img src="{{ asset('storage/' . $vehicle->image) }}" alt="{{ $vehicle->make }}">
+                <div class="absolute top-3 left-3 flex flex-col space-y-1">
+                    <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                        {{ $vehicle->arrival ? 'Arrival' : '' }}
+                    </span>
+                    <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                        {{ $vehicle->featured ? 'FEATURED' : '' }}
+                    </span>
+                </div>
+                <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-5 h-5 text-gray-700">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+              </svg>
+          </button>
+          <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">
+              KSh {{ number_format($vehicle->price) }}
+          </div>
       </div>
 
       <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2023 Audi RTS</h3>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">
+              {{ $vehicle->make }} {{ $vehicle->model }}
+          </h3>
 
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2023</span><span>12,000 mi</span>
+          <div class="text-gray-600 text-sm space-y-1 mb-3">
+              <div class="flex justify-between">
+                  <span>{{ $vehicle->year }}</span><span>{{ $vehicle->mileage }} km</span>
+              </div>
+              <div class="flex justify-between">
+                  <span>{{ $vehicle->powertrain }}</span><span>{{ $vehicle->transmission }}</span>
+              </div>
+              <div>{{ $vehicle->location }}</div>
           </div>
-          <div class="flex justify-between">
-            <span>Hybrid</span><span>Automatic</span>
-          </div>
-          <div>Mombasa, Kenya</div>
-        </div>
 
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">C
-            </div>
-            <div>
-              <p class="text-sm font-semibold">City Motors</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.8 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
+          <div class="flex items-center justify-between border-t pt-3">
+              <div class="flex items-center space-x-2">
+                  <div
+                      class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">
+                      C
+                  </div>
+                  <div>
+                      <p class="text-sm font-semibold">{{ $vehicle->company }}</p>
+                      <p class="text-xs text-gray-500 flex items-center">
+                          ⭐ Rating <span class="ml-1">✓ Verified</span>
+                      </p>
+                  </div>
+              </div>
+                <div class="flex items-center space-x-2">
+                    <button
+                        class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
+                        Details
+                    </button>
+                    <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
+                        </svg>
+                    </button>
+                </div>
           </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
-
-    <!-- Duplicate & modify for Card 2 & 3 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/Range.jpg') }}" alt="2022 Honda Accord" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$28,900</div>
-      </div>
-
-      <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2022 Range Rover Sport</h3>
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2022</span><span>18,500 mi</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Gasoline</span><span>Manual</span>
-          </div>
-          <div>Nairobi, Kenya</div>
-        </div>
-
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">A
-            </div>
-            <div>
-              <p class="text-sm font-semibold">AutoMax</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.6 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/BMW-i7.jpg') }}" alt="2024 BMW X5" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">NEW</span>
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$67,500</div>
-      </div>
-
-      <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2024 BMW i7</h3>
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2024</span><span>5,200 mi</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Gasoline</span><span>Automatic</span>
-          </div>
-          <div>Kisumu, Kenya</div>
-        </div>
-
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">L
-            </div>
-            <div>
-              <p class="text-sm font-semibold">Luxury Motors</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.9 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/audi.webp') }}" alt="2023 Toyota Camry" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">NEW</span>
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$32,500</div>
-      </div>
-
-      <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2023 Audi RTS</h3>
-
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2023</span><span>12,000 mi</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Hybrid</span><span>Automatic</span>
-          </div>
-          <div>Mombasa, Kenya</div>
-        </div>
-
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">C
-            </div>
-            <div>
-              <p class="text-sm font-semibold">City Motors</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.8 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Duplicate & modify for Card 5 & 6 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/Range.jpg') }}" alt="2022 Honda Accord" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$28,900</div>
-      </div>
-
-      <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2022 Range Rover Sport</h3>
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2022</span><span>18,500 mi</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Gasoline</span><span>Manual</span>
-          </div>
-          <div>Nairobi, Kenya</div>
-        </div>
-
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">A
-            </div>
-            <div>
-              <p class="text-sm font-semibold">AutoMax</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.6 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
-      <div class="relative">
-        <img src="{{ asset('images/BMW-i7.jpg') }}" alt="2024 BMW X5" class="w-full h-56 object-cover">
-        <div class="absolute top-3 left-3 flex flex-col space-y-1">
-          <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">NEW</span>
-          <span class="bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded-full">FEATURED</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/70 hover:bg-white p-2 rounded-full shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 text-gray-700">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-          </svg>
-        </button>
-        <div class="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-md font-semibold text-gray-800">$67,500</div>
-      </div>
-
-      <div class="p-5">
-        <h3 class="font-bold text-lg text-gray-900 mb-2">2024 BMW i7</h3>
-        <div class="text-gray-600 text-sm space-y-1 mb-3">
-          <div class="flex justify-between">
-            <span>2024</span><span>5,200 mi</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Gasoline</span><span>Automatic</span>
-          </div>
-          <div>Kisumu, Kenya</div>
-        </div>
-
-        <div class="flex items-center justify-between border-t pt-3">
-          <div class="flex items-center space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">L
-            </div>
-            <div>
-              <p class="text-sm font-semibold">Luxury Motors</p>
-              <p class="text-xs text-gray-500 flex items-center">
-                ⭐ 4.9 <span class="ml-1">✓ Verified</span>
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button
-              class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-              Details
-            </button>
-            <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+    @endforeach
   </div>
 
   <!-- View All -->

@@ -29,7 +29,7 @@
       <ul class="space-y-2">
         <li><a href="{{ route('cars.index') }}" class="hover:text-orange-500 transition">Cars</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
-        <li><a href="#" class="hover:text-orange-500 transition">Import</a></li>
+        <li><a href="{{ route('pages.import') }}" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
         <li><a href="{{ route('pages.sellcar') }}" class="hover:text-orange-500 transition">Sell your Car</a></li>
         <li><a href="{{ route('pages.about') }}" class="hover:text-orange-500 transition">About Us</a></li>

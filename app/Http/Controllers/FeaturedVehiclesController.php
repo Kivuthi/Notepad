@@ -68,24 +68,39 @@ class FeaturedVehiclesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(FeaturedVehicle $featuredVehicle)
-    {
-        //
+    public function edit($id)
+    {   $vehicle = FeaturedVehicle::findorFail($id);
+        return view('featuredVehicles.edit', compact('vehicle'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FeaturedVehicle $featuredVehicle)
+    public function update(Request $request, $id)
     {
-        //
+        $vehicle = FeaturedVehicle::findorFail($id);
+
+        $validated = $request->validate([
+            'make'=> 'required',
+            'model'=> 'required',   
+            'year'=> 'required',
+            'price'=> 'required',
+            'location'=> 'required',
+        ]);
+
+        $vehicle->update($validated);
+
+        return redirect()->route('featuredVehicles.index')->with('success','Vehicle updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FeaturedVehicle $featuredVehicle)
+    public function destroy($id)
     {
-        //
+        $vehicle = FeaturedVehicle::findorFail($id);
+        $vehicle->delete();
+
+        return redirect()->route('featuredVehicles.index')->with('success','Vehicle Deleted Successfully');
     }
 }
