@@ -113,227 +113,47 @@ body class="bg-gray-100">
   <!-- Vehicle Grid -->
   <main class="flex-1 p-6">
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50">
+    <div class="grid md:grid-cols-4 m-10 sm:grid-cols-2 gap-6">
+@foreach ($cars as $car)
+  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+    {{-- Car Image --}}
+    @if ($car->images && count(json_decode($car->images)) > 0)
+      <img src="{{ asset('storage/' . json_decode($car->images)[0]) }}" alt="{{ $car->model }}" class="w-full h-48 object-cover">
+    @else
+      <img src="{{ asset('images/no-image.jpg') }}" alt="No image" class="w-full h-48 object-cover">
+    @endif
 
-  <!-- Vehicle Card -->
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/audi.webpg') }}" alt="Mercedes Benz C180" class="w-full h-48 object-cover">
     <div class="p-5">
       <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2014</span>
+        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">{{ $car->availability ?? 'Available' }}</span>
+        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">{{ $car->year }}</span>
       </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Mercedes Benz C180</h3>
+
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">
+        {{ $car->make }} {{ $car->model }}
+      </h3>
+
       <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">1600 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
+        <span class="px-2 py-1 border border-gray-300 rounded">{{ $car->transmission ?? 'N/A' }}</span>
+        <span class="px-2 py-1 border border-gray-300 rounded">{{ $car->engine }} CC</span>
+        <span class="px-2 py-1 border border-gray-300 rounded">Used</span>
       </div>
+
       <p class="text-gray-600 text-sm mb-3">
-        The C180 combines German engineering with executive comfort and modern tech.
+        {{ Str::limit($car->description, 100) }}
       </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,549,999</p>
+
+      <p class="text-lg font-semibold text-gray-900 mb-4">KES {{ number_format($car->price, 2) }}</p>
+
       <div class="flex justify-between items-center">
         <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
+        <a href="{{ route('cars.show', $car->id) }}" class="text-blue-900 font-medium hover:underline">
+          View Details →
+        </a>
       </div>
     </div>
   </div>
-
-  <!-- Card 2 -->
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/BMW-i7.jpg') }}" alt="Toyota Axio" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2011</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Toyota Axio</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">1500 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        Reliable and fuel-efficient sedan — ideal for city driving and comfort.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 979,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img src="{{ asset('images/Range.jpg') }}" alt="Nissan Xtrail" class="w-full h-48 object-cover">
-    <div class="p-5">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-sm bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">Available</span>
-        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">2018</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 mb-1">Nissan Xtrail</h3>
-      <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-        <span class="px-2 py-1 border border-gray-300 rounded">Automatic</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">2000 CC</span>
-        <span class="px-2 py-1 border border-gray-300 rounded">Kenyan Used</span>
-      </div>
-      <p class="text-gray-600 text-sm mb-3">
-        A modern compact SUV offering comfort, power, and practicality for families.
-      </p>
-      <p class="text-lg font-semibold text-gray-900 mb-4">KES 2,699,999</p>
-      <div class="flex justify-between items-center">
-        <span class="text-xs bg-gray-900 text-white px-3 py-1 rounded">In-House Stock</span>
-        <a href="#" class="text-blue-900 font-medium hover:underline">View Details →</a>
-      </div>
-    </div>
-  </div>
-
+@endforeach
 </div>
 
     </div>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_car_migration', function (Blueprint $table) {
+        Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('make');
             $table->string('model');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('transmission')->nullable();
             $table->decimal('price', 10, 2)->nullable();
             $table->string('location')->nullable();
-            $table->string('image')->nullable();
+            $table->json('images')->nullable();
             $table->string('company')->nullable();
             $table->timestamps();
         });
