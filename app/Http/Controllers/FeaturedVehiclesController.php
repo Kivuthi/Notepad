@@ -60,9 +60,11 @@ class FeaturedVehiclesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(FeaturedVehicle $featuredVehicle)
+    public function show($id)
     {
-        //
+        $vehicle = FeaturedVehicle::findOrFail($id);
+
+        return view('featuredVehicles.show', compact('vehicle'));
     }
 
     /**

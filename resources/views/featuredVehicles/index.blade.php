@@ -11,17 +11,15 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<div class="flex gap-370 p-4">
+<div class="flex gap-5 p-3">
     <a href="{{ route('dashboard') }}"
        class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition duration-200">
-        <i class="fa-solid fa-backward"></i>
-        Dashboard
+        <- Dashboard
     </a>
 
     <a href="{{ route('featuredVehicles.create') }}"
        class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition duration-200">
-        <i class="fa-solid fa-plus"></i>
-        Add Vehicle
+        + Add Vehicle
     </a>
 </div>
 
@@ -103,6 +101,7 @@
                   onsubmit="return confirm('Are you sure you want to delete this vehicle?');">
               @csrf
               @method('DELETE')
+
               <button type="submit" 
                 class="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-md shadow transition">
                 <i class="fa fa-trash mr-1"></i>Delete

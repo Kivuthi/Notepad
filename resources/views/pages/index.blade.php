@@ -14,7 +14,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Ratiah Co.</h1>
         <p class="text-lg md:text-xl mb-5">Your Premier Automotive Marketplace</p>
-        <a href="#"
+        <a href="{{ route('pages.inventory') }}"
           class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">
           Browse Cars
         </a>
@@ -30,7 +30,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Luxury & Performance</h1>
         <p class="text-lg md:text-xl mb-5">Find premium rides from trusted dealers.</p>
-        <a href="#"
+        <a href="{{ route('pages.inventory') }}"
           class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">
           Explore Now
         </a>
@@ -46,7 +46,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Drive Your Dream</h1>
         <p class="text-lg md:text-xl mb-5">From local classics to imported icons.</p>
-        <a href="#"
+        <a href="{{ route('pages.inventory') }}"
           class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">
           Get Started
         </a>
@@ -61,8 +61,8 @@
       <div class="absolute inset-0 bg-black/60"></div>
       <div class="relative z-10 text-center text-white px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Trusted Dealers Only</h1>
-        <p class="text-lg md:text-xl mb-5">Buy and sell with complete confidence.</p>
-        <a href="#"
+        <p class="text-lg md:text-xl mb-5">Sell your vehicle with complete confidence.</p>
+        <a href="{{ route('pages.sellcar') }}"
           class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">
           Join Now
         </a>
@@ -189,7 +189,7 @@
             <option>2013</option>
             <option>2012</option>
             <option>2011</option>
-            <option>20</option>
+            <option>2010</option>
           </select>
         </div>
       </div>
@@ -274,11 +274,14 @@
                       </p>
                   </div>
               </div>
+
                 <div class="flex items-center space-x-2">
-                    <button
-                        class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
-                        Details
-                    </button>
+
+                    <a href="{{ route('featuredVehicles.show', $vehicle->id) }}" 
+                      class="border border-gray-300 text-gray-700 px-3 py-1 rounded-lg hover:bg-gray-100 text-sm font-semibold">
+                      Details
+                    </a>
+
                     <button class="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -295,9 +298,10 @@
 
   <!-- View All -->
   <div class="text-center mt-10">
-    <button class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800">
+    <a href="{{ route('pages.inventory') }}" 
+    class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 cursor-pointer">
       View All Vehicles →
-    </button>
+    </a>
   </div>
 </section>
 
@@ -350,7 +354,10 @@
           <li class="flex items-start"><span class="text-green-600 mr-2">✔</span> Fast delivery and after-sales support</li>
         </ul>  .
         <p> 
-        <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg px-4 py-2 text-sm font-semibold transition">More About Us-></a>
+          <a href="{{ route('pages.about') }}" 
+            class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg px-4 py-2 text-sm font-semibold transition">
+            More About Us->
+          </a>
         </p>  
       </div>
     </div>
@@ -476,7 +483,7 @@
 
     <div class="flex justify-center space-x-4 relative z-10">
       <a
-        href="#contact"
+        href="{{ route('pages.contact') }}"
         class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center space-x-2"
       >
         <span>📞</span>

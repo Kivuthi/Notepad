@@ -30,4 +30,8 @@ class PageController extends Controller
     public function import() {
         return view("pages.import");
     }
+
+    public function inventory() {
+        return view("pages.inventory");
+    }
 }

@@ -27,7 +27,7 @@
     <div>
       <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2">
-        <li><a href="{{ route('cars.index') }}" class="hover:text-orange-500 transition">Cars</a></li>
+        <li><a href="{{ route('pages.inventory') }}" class="hover:text-orange-500 transition">Cars</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Bikes</a></li>
         <li><a href="{{ route('pages.import') }}" class="hover:text-orange-500 transition">Import</a></li>
         <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
